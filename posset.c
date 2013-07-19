@@ -4,6 +4,7 @@
  *
  */
 
+#include <inttypes.h>
 #include "filebench.h"
 #include "posset.h"
 

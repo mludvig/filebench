@@ -182,6 +182,11 @@ AC_CHECK_LIB(
 	[AC_DEFINE(HAVE_AIOWAITN, 1, [Define if you have librt with aio_waitn support])
 ])
 AC_CHECK_LIB([m],[pow])
+AC_CHECK_LIB(
+	[m],
+	[round],
+	[ AC_DEFINE(HAVE_ROUND, 1, [ Define if you have libm with round support ])]
+)
 AC_CHECK_LIB([pthread], [pthread_mutex_lock])
 # Use Sun's robust mutexes if available
 AC_CHECK_LIB(

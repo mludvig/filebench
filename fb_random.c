@@ -25,14 +25,24 @@
 
 #include <stdio.h>
 #include <fcntl.h>
-/* this definition prevents warning about
-   using undefined round() function */
 #include <math.h>
+#include <inttypes.h>
 #include "filebench.h"
 #include "ipc.h"
 #include "gamma_dist.h"
 
 static int urandomfd;
+
+#ifndef HAVE_ROUND
+static double round(double x)
+{
+        double fx = floor(x);
+        if (x - fx > 0.5)
+                return ceil(x);
+        else
+                return floor(x);
+}
+#endif
 
 /****************************************
  *					*
