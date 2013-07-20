@@ -1300,7 +1300,6 @@ load_command: FSC_LOAD FSV_STRING
 		YYERROR;
 
 	(void) strcpy(loadfile, $2);
-	(void) strcat(loadfile, ".f");
 
 	if ((newfile = fopen(loadfile, "r")) == NULL) {
 		(void) strcpy(loadfile, fbbasepath);

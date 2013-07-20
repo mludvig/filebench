@@ -3699,7 +3699,6 @@ yyreduce:
 		YYERROR;
 
 	(void) strcpy(loadfile, (yyvsp[(2) - (2)].sval));
-	(void) strcat(loadfile, ".f");
 
 	if ((newfile = fopen(loadfile, "r")) == NULL) {
 		(void) strcpy(loadfile, fbbasepath);
